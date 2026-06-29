@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ChessLogic/ChessLogic.csproj" Id="75c6acf3-f98f-4bd0-958b-f391e017cb3c" />
+  <Project Path="ChessUI/ChessUI.csproj" Id="713ffbb0-392d-4494-9a7e-8bd72c8b1e62" />
+</Solution>
