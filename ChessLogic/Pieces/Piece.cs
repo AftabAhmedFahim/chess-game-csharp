@@ -24,7 +24,7 @@
                 if (piece.Color != Color)
                 {
                     yield return pos;
-                    continue;
+                    break;
                 }
 
                 yield break;
