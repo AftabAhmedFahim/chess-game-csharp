@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:ChessUI"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border Width="275"
-            Height="125"
+    <Border Width="360"
+            Height="180"
             Style="{StaticResource BorderStyle}">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -25,27 +25,38 @@
                        x:Name="WinnerText"
                        Text="WINNER TEXT"
                        Style="{StaticResource TextStyle}"
-                       FontSize="28"/>
+                       FontSize="28"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
 
             <TextBlock Grid.Row="1"
                        Grid.ColumnSpan="2"
-                       x:Name="REASON TEXT"
+                       x:Name="ReasonText"
                        Style="{StaticResource TextStyle}"
-                       FontSize="16"/>
+                       FontSize="15"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="15,5,15,10"/>
 
             <Button Grid.Row="2"
                     Content="RESTART"
                     Style="{StaticResource ButtonStyle}"
-                    Width="80"
-                    Height="30"
+                    Width="90"
+                    Height="32"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     Click="Restart_Click"/>
 
             <Button Grid.Row="2"
                     Grid.Column="1"
                     Content="EXIT"
                     Style="{StaticResource ButtonStyle}"
-                    Width="80"
-                    Height="30"
+                    Width="90"
+                    Height="32"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     Click="Exit_Click"/>
         </Grid>
     </Border>
