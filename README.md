@@ -43,10 +43,17 @@ The graphical interface. It purely reacts to the state provided by `ChessLogic`.
 5. Build the Solution (`Ctrl + Shift + B`).
 6. Run the application (`F5`).
 
-## 🔮 Future Roadmap (Phase 2: AI Integration)
+## 🔮 Future Roadmap (Phase 2: High-Performance Engine)
 
-The current infrastructure sets a perfect foundation for Phase 2: An automated AI opponent. 
-Because `ChessLogic.Board` implements a deep `Copy()` method and `Move.IsLegal()` utilizes simulated future states, the architecture is primed for:
-- **Minimax Search Algorithm**: Traversing the `GameState.AllLegalMovesFor()` tree to evaluate future positions.
-- **Alpha-Beta Pruning**: Optimizing the search tree by eliminating branches that guarantee worse outcomes.
-- **Board Evaluation Metrics**: Scoring piece values, central control, and king safety in the terminal nodes.
+This repository represents **Phase 1**: A complete, highly readable, Object-Oriented reference implementation of chess rules and UI.
+
+A strong search-based engine needs to evaluate millions of positions per second. The specific patterns used in this implementation — deep board copying per legality check, LINQ-based move generation, and heap-allocated piece/move objects — are what stand in the way of that, not Object-Oriented design in general. Reaching that throughput calls for a different set of tradeoffs entirely.
+
+**Phase 2** (the AI engine) is being built in a separate repository, using **Data-Oriented Design**:
+- **Bitboards**: Replacing the 2D object array with 64-bit integers (`ulong`) for cache-friendly, ultra-fast move generation via bitwise math.
+- **Zero-allocation moves**: Replacing `Move` objects with a single 16-bit integer encoding (from-square, to-square, promotion, and move-type flags).
+- **UCI protocol**: A headless console application that communicates with standard chess GUIs and testing tools (Arena, Cute Chess, `cutechess-cli`) via stdin/stdout.
+
+🔗 **Engine repo:** _link added here once published_
+
+This `chess-game-csharp` repository will remain exactly as-is, serving as the definitive "ground truth" — a clean, easily debuggable reference used to differentially test the new engine's move generator against correct FIDE-rule behavior.

@@ -1,6 +1,6 @@
 # 📖 Chess Rules & Engine Technical Reference
 
-This document maps official FIDE laws of chess directly to their mathematical implementations within the `ChessLogic` pure C# rule engine.
+> **Architecture Note**: This document maps official FIDE laws of chess directly to their mathematical implementations within the `ChessLogic` pure C# object-oriented (OOP) rule engine. This serves as a highly readable, "ground truth" reference implementation. A future high-performance AI engine will implement these same rules using Data-Oriented Design (Bitboards).
 
 ---
 
